@@ -1,7 +1,9 @@
+#! /usr/bin/env python3
+
 from os import remove
 from pathlib import Path
 
-video_suffixes = ['.mp4', '.gif']
+exts_to_clean = {'.mp4', '.gif', '.jpg', '.jpeg', '.png', '.svg'}
 for d in (Path.home() / 'Desktop').iterdir():
-    if d.suffix in video_suffixes:
+    if d.suffix in exts_to_clean:
         remove(d)
